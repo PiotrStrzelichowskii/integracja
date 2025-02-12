@@ -46,6 +46,27 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        // Opcjonalnie: usuń klasę active gdy element nie jest widoczny
+        // entry.target.classList.remove('active');
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '-50px 0px'
+  });
+
+  // Obserwuj wszystkie elementy z animacją
+  document.querySelectorAll('.slide-from-left, .slide-from-right').forEach((element) => {
+    observer.observe(element);
+  });
+});
+
 document.querySelectorAll('.read-more-btn').forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
@@ -75,3 +96,61 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const texts = [
+      "Nie czekaj – ruszaj w teren z nami!",
+      "Twoja przygoda zaczyna się tutaj!",
+      "Gotowy na ekstremalne emocje?"
+  ];
+  
+  let index = 0;
+  const textElement = document.getElementById("changing-text");
+
+  function changeText() {
+    textElement.style.animation = 'none';
+    textElement.offsetHeight; // Wymuszenie reflow
+    textElement.style.animation = null;
+    index = (index + 1) % texts.length;
+    textElement.textContent = texts[index];
+  }
+
+  setInterval(changeText, 5000);
+});
+
+let lastScrollPosition = 0;
+const header = document.querySelector('.site-header');
+let ticking = false;
+
+// Ustaw początkową pozycję przewijania
+lastScrollPosition = window.pageYOffset;
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const currentScrollPosition = window.pageYOffset;
+      
+      // Zawsze pokazuj header gdy jesteśmy na samej górze
+      if (currentScrollPosition <= 0) {
+        header.style.transform = 'translateY(0)';
+      }
+      // Pokazuj header podczas scrollowania w górę
+      else if (currentScrollPosition < lastScrollPosition) {
+        header.style.transform = 'translateY(0)';
+      }
+      // Ukrywaj header podczas scrollowania w dół
+      else {
+        header.style.transform = 'translateY(-100%)';
+      }
+      
+      lastScrollPosition = currentScrollPosition;
+      ticking = false;
+    });
+    
+    ticking = true;
+  }
+});
+
+// Pokazuj header na początku
+header.style.transform = 'translateY(0)';
