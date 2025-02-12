@@ -1,10 +1,11 @@
 body{
-  background-color: lightgray;
+  background-color: rgb(94, 46, 7);
   margin: 0;
   font-family: "Anton", serif;
   min-height: 100vh; /* Zmiana z height: 200vh na min-height: 100vh */
   position: relative; /* Dodane */
   overflow-y: auto; /* Dodane */
+  height: 6000px;
 }
 
 html, body {
@@ -13,11 +14,23 @@ html, body {
   scroll-behavior: smooth; /* Dodane */
 }
 
+* {
+  scrollbar-color: #666 #201c1c;
+}
+
+
 .site-header{
-  background-color: rgb(94, 46, 7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+  background-color: #fff;
+  z-index: 1000;
   height: 6rem;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(94, 46, 7);
 
 }
 
@@ -158,6 +171,7 @@ nav ul li a:hover{
   z-index: -100;
   width: 100%;
   overflow-x: hidden;
+  margin-top: 6rem;
 }
 .site-main-fullpage-image-section{
   position: relative;
@@ -242,6 +256,7 @@ nav ul li a:hover{
 
 .check-offer-button:hover {
   background-color: #E65100;
+  transform: translateY(-5px);
 }
 
 .write-to-us-button {
@@ -252,6 +267,7 @@ nav ul li a:hover{
 
 .write-to-us-button:hover {
   background-color: rgb(255, 238, 214);
+  transform: translateY(-5px);
   color: black;
 }
 
@@ -345,6 +361,26 @@ nav ul li a:hover{
   max-width: 1400px;
   margin: 40px auto 0;
 }
+.slide-from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-out;
+  visibility: hidden;
+}
+
+.slide-from-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+  visibility: hidden;
+}
+
+.slide-from-left.active,
+.slide-from-right.active {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
 
 .page-4-grid-item {
   display: flex;
@@ -353,6 +389,7 @@ nav ul li a:hover{
   border-radius: 8px;
   overflow: visible;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 3px solid rgb(148, 145, 145);
   transition: all 0.3s ease;
   height: auto;
   min-height: 300px;
@@ -374,6 +411,15 @@ nav ul li a:hover{
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.offer-image-1{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.offer-image-2{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .offer-content {
@@ -482,7 +528,13 @@ nav ul li a:hover{
   .offer-image {
     flex: 0 0 250px;
     width: 100%;
-    position: relative;
+    position: relative
+  }
+  .offer-image-1,.offer-image-2{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 
   .offer-content {
@@ -508,3 +560,83 @@ nav ul li a:hover{
     width: 100%;
   }
 }
+
+/* separator banner */
+
+.separator-banner {
+  width: 100%;
+  background-color: rgb(255, 238, 214);
+  color: rgb(94, 46, 7);
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-weight: bold;
+  padding: 40px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.separator-banner p {  
+  margin: 0;
+  animation: fadeInOut 5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(10px); }
+  15%, 85% { opacity: 1; transform: translateY(0); }
+}
+
+/* custom grid */
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Karty */
+.custom-grid{
+  
+  background-color: #f5f5f5; 
+}
+
+.grid-item {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Układ górnego rzędu */
+.large {
+  grid-column: span 2; /* Duża karta zajmująca dwie kolumny */
+  height: 200px;
+}
+
+.small {
+  height: 200px;
+}
+
+/* Układ dolnego rzędu */
+.medium {
+  height: 180px;
+}
+
+.highlight {
+  background: #0B0E2E; 
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
