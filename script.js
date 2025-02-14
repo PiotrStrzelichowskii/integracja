@@ -1,3 +1,11 @@
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.onload = function() {
+    window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const gridElements = document.querySelectorAll('.grid-element');
   const container = document.querySelector('.second-row-grid');
@@ -154,3 +162,22 @@ window.addEventListener('scroll', () => {
 
 // Pokazuj header na początku
 header.style.transform = 'translateY(0)';
+
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  function checkFade() {
+    fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+      
+      if (isVisible) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkFade);
+  checkFade(); // Sprawdź przy pierwszym załadowaniu
+});
