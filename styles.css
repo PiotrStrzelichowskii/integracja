@@ -2,16 +2,17 @@ body{
   background-color: rgb(94, 46, 7);
   margin: 0;
   font-family: "Anton", serif;
-  min-height: 100vh; /* Zmiana z height: 200vh na min-height: 100vh */
-  position: relative; /* Dodane */
-  overflow-y: auto; /* Dodane */
-  height: 6000px;
+  min-height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  height: auto;
 }
 
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
-  scroll-behavior: smooth; /* Dodane */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -124,20 +125,20 @@ nav ul li a:hover{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0; /* Zmiana z -100vh na 0 */
+    top: 0;
     left: 0;
     background-color: rgba(94, 46, 7, 0.98);
     width: 100%;
-    height: 100vh; /* Zmiana z 50vh na 100vh */
+    height: 100vh;
     padding: 80px 20px 20px 20px;
     z-index: 2;
     margin: 0;
-    transform: translateY(-100%); /* Zmiana */
+    transform: translateY(-100%);
     transition: transform 0.4s ease-in-out;
   }
 
   nav ul.active {
-    transform: translateY(0); /* Zmiana */
+    transform: translateY(0);
     display: flex;
   }
 
@@ -246,6 +247,7 @@ nav ul li a:hover{
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border-radius: 0.4rem;
+  text-decoration: none;
 }
 
 .check-offer-button {
@@ -472,25 +474,25 @@ nav ul li a:hover{
   background-color: #f5f5f5;
 }
 
-.page-4 .title {
+.page-4 .title ,.page-5 .title {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.page-4 .title h2 {
+.page-4 .title h2 ,.page-5 .title h2 {
   font-family: 'Anton', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #333;
 }
 
-.page-4 .title p {
+.page-4 .title p ,.page-5 .title p {
   color: #666;
   font-size: 1.1rem;
   margin-bottom: 15px;
 }
 
-.page-4 .title .line {
+.page-4 .title .line ,.page-5 .title .line {
   width: 80px;
   height: 4px;
   background-color: #4A4A4A;
@@ -590,53 +592,117 @@ nav ul li a:hover{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 40px auto;
   padding: 20px;
 }
 
 /* Karty */
-.custom-grid{
-  
-  background-color: #f5f5f5; 
+
+/* page 5 */
+
+.page-5 {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5; 
+}
+
+.page-5 .custom-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
 }
 
 .grid-item {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 180px;
-  transition: transform 0.3s ease-in-out;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 3px solid rgb(148, 145, 145);
+    overflow: hidden;
+    height: auto;
+    min-height: 300px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.grid-item:hover {
-  transform: translateY(-5px);
+.grid-item.large {
+    grid-column: span 2;
+    padding: 2rem;
 }
 
-/* Układ górnego rzędu */
-.large {
-  grid-column: span 2; /* Duża karta zajmująca dwie kolumny */
-  height: 200px;
+.grid-item.small {
+    position: relative;
+    padding: 2rem;
 }
 
-.small {
-  height: 200px;
+.grid-item.small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-/* Układ dolnego rzędu */
-.medium {
-  height: 180px;
+.grid-item h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
 }
 
-.highlight {
-  background: #0B0E2E; 
-  color: white;
-  font-weight: bold;
-  text-align: center;
+.grid-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.2s; }
+.fade-in-delay-2 { transition-delay: 0.4s; }
+.fade-in-delay-3 { transition-delay: 0.6s; }
+.fade-in-delay-4 { transition-delay: 0.8s; }
+
+@media (max-width: 900px) {
+    .page-5 .custom-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .grid-item.large {
+        grid-column: auto;
+    }
+
+    .grid-item {
+        min-height: auto;
+    }
+
+    .grid-item.small {
+        height: 300px;
+    }
+
+    .page-5 {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .page-5 .custom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-item.large {
+        grid-column: auto;
+    }
+}
 
 
