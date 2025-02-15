@@ -190,7 +190,7 @@ nav ul li a:hover{
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('photos/toyota7.png') no-repeat center center/cover;
+  background: url('photos/toyota7.webp') no-repeat center center/cover;
   z-index: 0;
 }
 
@@ -826,7 +826,8 @@ nav ul li a:hover{
   border: 3px solid rgb(148, 145, 145);
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
   cursor: pointer;
 }
@@ -859,6 +860,9 @@ nav ul li a:hover{
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gallery-item.wide {
@@ -1053,12 +1057,6 @@ footer {
   color: inherit;
   font-size: 1.5em;
   transition: color 0.3s ease;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
 }
 
 .social-icons a:hover {
