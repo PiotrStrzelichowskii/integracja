@@ -47,10 +47,18 @@ document.addEventListener("scroll", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.querySelector('nav ul');
+  const navLinks = document.querySelectorAll('nav ul li a');
 
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
   });
 });
 
@@ -58,10 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      } else {
-        // Opcjonalnie: usuń klasę active gdy element nie jest widoczny
-        // entry.target.classList.remove('active');
+        const element = entry.target;
+        
+        if (element.classList.contains('gallery-item')) {
+          // Logika dla elementów galerii
+          const delay = Array.from(element.parentNode.children).indexOf(element) * 0.1;
+          element.style.transitionDelay = `${delay}s`;
+          element.classList.add('visible');
+        } else if (element.classList.contains('slide-from-left') || 
+                   element.classList.contains('slide-from-right')) {
+          // Logika dla elementów slide
+          element.classList.add('active');
+        }
       }
     });
   }, {
@@ -69,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: '-50px 0px'
   });
 
-  // Obserwuj wszystkie elementy z animacją
-  document.querySelectorAll('.slide-from-left, .slide-from-right').forEach((element) => {
+  // Obserwuj wszystkie animowane elementy
+  document.querySelectorAll('.gallery-item, .slide-from-left, .slide-from-right').forEach((element) => {
     observer.observe(element);
   });
 });
@@ -114,14 +130,16 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
   
   let index = 0;
-  const textElement = document.getElementById("changing-text");
+  const textElements = document.querySelectorAll(".changing-text");
 
   function changeText() {
-    textElement.style.animation = 'none';
-    textElement.offsetHeight; // Wymuszenie reflow
-    textElement.style.animation = null;
+    textElements.forEach(element => {
+      element.style.animation = 'none';
+      element.offsetHeight; // Wymuszenie reflow
+      element.style.animation = null;
+      element.textContent = texts[index];
+    });
     index = (index + 1) % texts.length;
-    textElement.textContent = texts[index];
   }
 
   setInterval(changeText, 5000);
@@ -181,3 +199,52 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', checkFade);
   checkFade(); // Sprawdź przy pierwszym załadowaniu
 });
+
+/* Galeria */
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const item = entry.target;
+        // Oblicz opóźnienie na podstawie pozycji elementu w galerii
+        const delay = Array.from(item.parentNode.children).indexOf(item) * 0.1;
+        item.style.transitionDelay = `${delay}s`;
+        item.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '50px'
+  });
+
+  // Obserwuj wszystkie elementy galerii
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    observer.observe(item);
+  });
+});
+
+
+// Obsługa przycisku "Powrót do góry"
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  const backToTopButton = document.getElementById("backToTop");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+}
+
+document.getElementById("backToTop").addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
