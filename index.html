@@ -9,9 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body id="Start">
+  <button id="backToTop" title="Powrót do góry">
+    <i class="fas fa-arrow-up"></i>
+  </button>
   <header class="site-header">
     <div class="site-branding">
       <img src="photos/logo.webp" class="custom-logo">
@@ -37,7 +40,7 @@
         <h2 class="title-text">Włącz silnik, wyłącz codzienność – czas na niezapomniane wyzwania <br> w terenie!</h2>
         <div class="grid-bottom-row"> 
           <a href="#Oferta" class="check-offer-button">Poznaj ofertę</a>
-          <button class="write-to-us-button">Napisz do nas!</button>
+          <a href="#Kontakt" class="write-to-us-button">Napisz do nas!</a>
         </div>
       </div>
     </div>
@@ -66,7 +69,7 @@
       </div>  
     </div>
 
-    <div class="page-4" id="Oferta">
+    <div class="page-4" id="Oferta">    
       <div class="page-grid">
         <div class="title">
           <h2>Nasza oferta</h2>
@@ -79,18 +82,38 @@
               <img class="offer-image-1" src="photos/toyota11.jpeg" alt="Jazda Off-road">
             </div>
             <div class="offer-content">
-              <h3>Off-road dla każdego – emocje, adrenalina i świetna zabawa!</h3>
+              <h3>Oferta dla osób indywidualnych – emocje, adrenalina i świetna zabawa!</h3>
               <p class="offer-short">Szukasz niezapomnianych wrażeń? Zapraszamy na szkolenia i wyprawy off-road dla 
                 osób indywidualnych, rodzin i małych grup!
               </p>
               <div class="offer-details collapsed">
-                <p>Co oferujemy?<br>
-                  🚙 Przejażdżki i wycieczki terenowe – łatwe lub ekstremalne, dopasowane do Twoich umiejętności.<br>
-                  🏕️ Całodniowe i kilkudniowe wyprawy – możesz skorzystać z naszych pojazdów lub wyruszyć własnym!<br>
-                  🎉 Organizację wieczorów kawalerskich i panieńskich pełnych adrenaliny.<br> 
-                  🏁 Szkolenia i zabawy terenowe dla dorosłych i dzieci.<br>
-                  💡 Indywidualne atrakcje – realizujemy Twoje pomysły!
-                </p>
+                <p>Co oferujemy?</p>
+                <div class="offer-highlights">
+                  <div class="offer-item">
+                    <span class="offer-icon">🚙</span>
+                    <span class="offer-text"><span class="highlight">Przejażdżki i wycieczki terenowe</span> – łatwe lub ekstremalne, dopasowane do Twoich umiejętności</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🏕️</span>
+                    <span class="offer-text"><span class="highlight">Całodniowe i kilkudniowe wyprawy</span> – możesz skorzystać z naszych pojazdów lub wyruszyć własnym!</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🎉</span>
+                    <span class="offer-text"><span class="highlight">Organizacja wieczorów kawalerskich i panieńskich</span> pełnych adrenaliny</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🏁</span>
+                    <span class="offer-text"><span class="highlight">Szkolenia i zabawy terenowe</span> dla dorosłych i dzieci</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🏍️</span>
+                    <span class="offer-text"><span class="highlight">Przejazdy quadami</span> – emocjonujące trasy w terenie</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">💡</span>
+                    <span class="offer-text"><span class="highlight">Indywidualne atrakcje</span> – realizujemy Twoje pomysły!</span>
+                  </div>
+                </div>
               </div>
               <button class="read-more-btn">Czytaj więcej</button>
             </div>
@@ -105,14 +128,34 @@
                 Zorganizujemy dla Ciebie pełen wrażeń dzień, który na długo zostanie w pamięci Twojego zespołu!
               </p>
               <div class="offer-details collapsed">
-                <p>🏢 Integracja w terenie – natura, adrenalina i świetna zabawa!<br>
-                   🎯 Zloty, szkolenia, sympozja i zjazdy.<br>
-                   🎪 Eventy tematyczne i okolicznościowe.<br>
-                   ⚡ Indywidualne rozwiązania dopasowane do Twoich potrzeb.<br>
-                   🏍️ Przejazdy quadami – emocjonujące trasy w terenie.<br>
-                   🎮 Zabawy i rywalizacje na torze – alkogogle, próby zręcznościowe i nie tylko!<br>
-                </p>
-              </div> 
+                <p>Co oferujemy?</p>
+                <div class="offer-highlights">
+                  <div class="offer-item">
+                    <span class="offer-icon">🏢</span>
+                    <span class="offer-text"><span class="highlight">Integracja w terenie</span> – natura, adrenalina i świetna zabawa!</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🎯</span>
+                    <span class="offer-text"><span class="highlight">Zloty, szkolenia, sympozja i zjazdy</span> – profesjonalna organizacja</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🎪</span>
+                    <span class="offer-text"><span class="highlight">Eventy tematyczne i okolicznościowe</span> – dostosowane do Twoich potrzeb</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">⚡</span>
+                    <span class="offer-text"><span class="highlight">Indywidualne rozwiązania</span> – dopasowane do Twoich potrzeb</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🏍️</span>
+                    <span class="offer-text"><span class="highlight">Przejazdy quadami</span> – emocjonujące trasy w terenie</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🎮</span>
+                    <span class="offer-text"><span class="highlight">Zabawy i rywalizacje na torze</span> – alkogogle, próby zręcznościowe i nie tylko!</span>
+                  </div>
+                </div>
+              </div>
               <button class="read-more-btn">Czytaj więcej</button>
             </div>
           </div>
@@ -125,12 +168,25 @@
               <p class="offer-short">Jesteś właścicielem hotelu, pensjonatu lub ośrodka wypoczynkowego?
                  Wzbogacimy Twój program o wyjątkowe atrakcje!</p>
               <div class="offer-details collapsed">
-                <p>
-                  🏨 Profesjonalne eventy dla gości i klientów.<br>
-                  🌍 Obsługa grup obcojęzycznych.<br>
-                  📍 Możliwość wykorzystania Twojego obiektu jako bazy wypadowej.<br>
-                  💼 Chcesz dowiedzieć się więcej? Skontaktuj się z nami – razem stworzymy ofertę, która przyciągnie nowych klientów! ⭐
-                </p>
+                <p>Co oferujemy?</p>
+                <div class="offer-highlights">
+                  <div class="offer-item">
+                    <span class="offer-icon">🏨</span>
+                    <span class="offer-text"><span class="highlight">Profesjonalne eventy</span> dla gości i klientów</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">🌍</span>
+                    <span class="offer-text"><span class="highlight">Obsługa grup obcojęzycznych</span> – doświadczeni instruktorzy</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">📍</span>
+                    <span class="offer-text"><span class="highlight">Wykorzystanie Twojego obiektu</span> jako bazy wypadowej</span>
+                  </div>
+                  <div class="offer-item">
+                    <span class="offer-icon">💼</span>
+                    <span class="offer-text"><span class="highlight">Indywidualne rozwiązania</span> – dopasowane do Twoich potrzeb</span>
+                  </div>
+                </div>
               </div>
               <button class="read-more-btn">Czytaj więcej</button>
             </div>
@@ -138,8 +194,8 @@
         </div>
       </div>
     </div>
-    <div class="separator-banner">
-      <p id="changing-text">Nie czekaj – ruszaj w teren z nami!</p>
+    <div class="separator-banner" id="separator1">
+      <p class="changing-text">Nie czekaj – ruszaj w teren z nami!</p>
     </div>
 
     <div class="page-5" id="Onas">
@@ -149,38 +205,183 @@
           <p>Poznaj naszą firmę</p>
           <div class="line"></div>
         </div>
-      <div class="custom-grid">
-        <div class="grid-item large fade-in">
-          <h2>Off-road to nasza pasja!</h2>
-          <p>Nasza firma została założona w 1993 roku przez Mariusza Strzelichowskiego – doświadczonego off-roadowca, 
-            uczestnika i organizatora rajdów terenowych. Przez lata zbudowaliśmy zespół profesjonalnych instruktorów, 
-            którzy uczą, jak pewnie i bezpiecznie poruszać się w trudnym terenie.<br>
-            Organizujemy niezapomniane szkolenia i eventy off-roadowe, dostosowane do Twoich oczekiwań – od krótkich przejażdżek po wielodniowe ekspedycje. Dzięki nam poczujesz prawdziwą adrenalinę i odkryjesz off-road w najlepszym wydaniu!<br>
-            Działamy na terenie całej Polski, współpracując z hotelami i ośrodkami wypoczynkowymi. Zrealizowaliśmy ponad 1000 imprez integracyjnych, zawsze dbając o najwyższą jakość i bezpieczeństwo.</p>
-        </div>
-        <div class="grid-item small fade-in fade-in-delay-1">
-          <img src="photos/olddays.jpeg" alt="O nas" class="fit-image">
-        </div>
-        <div class="grid-item small fade-in fade-in-delay-2">
-          <img src="photos/zetaw2.jpg" alt="O nas" class="fit-image">
-        </div>
-        <div class="grid-item small grid-item-text fade-in fade-in-delay-3">
-          <h2>Nasze pojazdy</h2>
-          <p>
-            Dysponujemy 15 terenowymi samochodami (Toyota Land Cruiser 70, Hyundai Terracan, Isuzu Trooper,
-            Toyota Hilux, Ford Ranger) oraz 8 quadami (CFMOTO CForce, Yamaha Grizzly, Suzuki Eiger).
-            Bez względu na teren – błoto, piach, wodę czy góry – z nami czeka Cię prawdziwa off-roadowa przygoda! 🚙🔥
-          </p>
-        </div>
-        <div class="grid-item small fade-in fade-in-delay-4">
-          <img src="photos/zestaw.jpg" alt="O nas" class="fit-image">
+        <div class="custom-grid">
+          <div class="grid-item large fade-in">
+            <h2>Off-road to nasza pasja!</h2>
+            <p>Nasza firma została założona w 1993 roku przez Mariusza Strzelichowskiego – doświadczonego off-roadowca, 
+              uczestnika i organizatora rajdów terenowych. Przez lata zbudowaliśmy zespół profesjonalnych instruktorów, 
+              którzy uczą, jak pewnie i bezpiecznie poruszać się w trudnym terenie.<br>
+              Organizujemy niezapomniane szkolenia i eventy off-roadowe, dostosowane do Twoich oczekiwań – od krótkich przejażdżek po wielodniowe ekspedycje. Dzięki nam poczujesz prawdziwą adrenalinę i odkryjesz off-road w najlepszym wydaniu!<br>
+              Działamy na terenie całej Polski, współpracując z hotelami i ośrodkami wypoczynkowymi. Zrealizowaliśmy ponad 1000 imprez integracyjnych, zawsze dbając o najwyższą jakość i bezpieczeństwo.</p>
+          </div>
+          <div class="grid-item small fade-in fade-in-delay-1">
+            <img src="photos/olddays.jpeg" alt="O nas" class="fit-image">
+          </div>
+          <div class="grid-item small fade-in fade-in-delay-2">
+            <img src="photos/zetaw2.jpg" alt="O nas" class="fit-image">
+          </div>
+          <div class="grid-item small grid-item-text fade-in fade-in-delay-3">
+            <h2>Nasze pojazdy</h2>
+            <p>
+              Dysponujemy 15 terenowymi samochodami (Toyota Land Cruiser 70, Hyundai Terracan, Isuzu Trooper,
+              Toyota Hilux, Ford Ranger) oraz 8 quadami (CFMOTO CForce, Yamaha Grizzly, Suzuki Eiger).<br>
+              Bez względu na teren – błoto, piach, wodę czy góry – z nami czeka Cię prawdziwa off-roadowa przygoda! 🚙🔥
+            </p>
+          </div>
+          <div class="grid-item small fade-in fade-in-delay-4">
+            <img src="photos/zestaw.jpg" alt="O nas" class="fit-image">
+          </div>
         </div>
       </div>
     </div>
- 
-  </main>
-  <footer>
 
+    <div class="separator-banner" id="separator2">
+      <p class="changing-text">Nie czekaj – ruszaj w teren z nami!</p>
+    </div>
+
+    <div class="page-6" id="Galeria">
+      <div class="page-grid">
+        <div class="title">
+          <h2>Galeria</h2>
+          <p>Zobacz nasze eventy</p>
+          <div class="line"></div>
+        </div>
+        <div class="gallery-buttons">
+          <button class="gallery-btn active" data-gallery="gallery1">Ostatnie</button>
+          <button class="gallery-btn" data-gallery="gallery2">Kawalerskie</button>
+          <button class="gallery-btn" data-gallery="gallery3">Panieńskie</button>
+          <button class="gallery-btn" data-gallery="gallery4">Event firmowy</button>
+          <button class="gallery-btn" data-gallery="gallery5">Event firmowy</button>
+      </div>
+  
+      <div class="galleries">
+          <div class="gallery gallery1 active">
+              <div class="gallery-item wide"><img src="photos/toyota1.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+              <div class="gallery-item tall"><img src="photos/toyota3.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota4.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+              <div class="gallery-item wide"><img src="photos/toyota5.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota6.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota7.jpeg" alt="Event"></div>
+              <div class="gallery-item tall"><img src="photos/toyota10.jpeg" alt="Event"></div>
+              <div class="gallery-item wide"><img src="photos/toyota11.jpeg" alt="Event"></div>
+          </div>
+  
+          <div class="gallery gallery2">
+            <div class="gallery-item wide"><img src="photos/toyota1.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota3.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota4.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item wide"><img src="photos/toyota5.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota6.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota7.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota10.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+          </div>
+  
+          <div class="gallery gallery3">
+            <div class="gallery-item wide"><img src="photos/toyota1.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota3.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota4.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item wide"><img src="photos/toyota5.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota6.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota7.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota10.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+          </div>
+  
+          <div class="gallery gallery4">
+            <div class="gallery-item wide"><img src="photos/toyota1.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota3.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota4.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+            <div class="gallery-item wide"><img src="photos/toyota5.jpg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota6.jpg" alt="Event"></div>
+            <div class="gallery-item tall"><img src="photos/toyota7.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota10.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+            <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+          </div>
+  
+          <div class="gallery gallery5">
+               <div class="gallery-item wide"><img src="photos/toyota1.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+              <div class="gallery-item tall"><img src="photos/toyota3.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota4.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota2.jpg" alt="Event"></div>
+              <div class="gallery-item wide"><img src="photos/toyota5.jpg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota6.jpg" alt="Event"></div>
+              <div class="gallery-item tall"><img src="photos/toyota7.jpeg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota10.jpeg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+              <div class="gallery-item"><img src="photos/toyota11.jpeg" alt="Event"></div>
+          </div>
+      </div>
+
+      </div>
+    </div>
+  </main>
+  <footer class="footer" id="Kontakt">
+    <div class="footer-container">
+      <div class="footer-section contact-info">
+        <h3>Dane kontaktowe</h3>
+        <div class="contact-details">
+          <p><i class="fas fa-building"></i> PS Bikes Mariusz Strzelichowski</p>
+          <p><i class="fas fa-map-marker-alt"></i> ul. Powstania Styczniowego 12a, 30-298 Kraków</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+48501318521" style="text-decoration: none; color: inherit;">+48 501 318 521</a></p>
+          <p><i class="fas fa-envelope"></i> info@integracja4x4.pl </p>
+          <p><i class="fas fa-university"></i> <span contenteditable="false">Nr konta: 76 2490 0005 0000 4000 1600 9299</span></p>
+          
+          <div class="social-media">
+            <h3>Znajdź nas:</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/integracja4x4" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://m.me/integracja4x4" target="_blank" title="Messenger">
+                <i class="fab fa-facebook-messenger"></i>
+              </a>
+              <a href="https://www.instagram.com/integracja4x4.pl/" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="mailto:info@integracja4x4.pl" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section contact-form">
+        <h3>Napisz do nas</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Imię i nazwisko" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Telefon">
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Twoja wiadomość" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Wyślij wiadomość</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Integracja4x4. Wszelkie prawa zastrzeżone.</p>
+      <p class="author">Designed and built by <a href="https://github.com/PiotrStrzelichowskii">strzelichowski.dev</a></p>
+    </div>
   </footer>
 
 <script src="script.js"></script>
