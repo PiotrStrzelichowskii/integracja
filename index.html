@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta name="format-detection" content="telephone=no">
+  <!-- Dodanie favicon -->
+  <link rel="icon" href="photos/logo.webp" type="image/webp" style="width: 64px; height: 66px;">
 </head>
 <body id="Start">
   <button id="backToTop" title="Powrót do góry">
@@ -352,7 +354,7 @@
       </div>
 
       <div class="footer-section contact-form">
-        <h3>Napisz do nas</h3>
+        <h3>Skontaktuj się z nami!</h3>
         <form id="contactForm" action="https://formsubmit.co/Piotregzone@gmail.com" method="POST">
           <div class="form-group">
             <label for="name">Imię i nazwisko</label>
@@ -371,6 +373,7 @@
             <textarea id="message" name="message" required style="margin-top: 8px; padding: 12px 8px; outline-color: #ff8c00;"></textarea>
           </div>
           <button type="submit" class="submit-btn">Wyślij wiadomość</button>
+          <input type="hidden" name="_next" value="form.html">
         </form>
       </div>
     </div>
