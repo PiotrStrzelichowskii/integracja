@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '-50px 0px'
   });
 
-  // Obserwujemy kontener
   if (container) {
     observer.observe(container);
   }
@@ -69,13 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const element = entry.target;
         
         if (element.classList.contains('gallery-item')) {
-          // Logika dla elementów galerii
           const delay = Array.from(element.parentNode.children).indexOf(element) * 0.1;
           element.style.transitionDelay = `${delay}s`;
           element.classList.add('visible');
         } else if (element.classList.contains('slide-from-left') || 
                    element.classList.contains('slide-from-right')) {
-          // Logika dla elementów slide
           element.classList.add('active');
         }
       }
@@ -85,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: '-50px 0px'
   });
 
-  // Obserwuj wszystkie animowane elementy
   document.querySelectorAll('.gallery-item, .slide-from-left, .slide-from-right').forEach((element) => {
     observer.observe(element);
   });
@@ -101,16 +97,12 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
       const contentHeight = details.scrollHeight;
       
       if (!details.classList.contains('expanded')) {
-        // Najpierw ustawiamy wysokość na 0
         details.style.height = '0';
-        // Wymuszamy przeliczenie układu (reflow)
         details.offsetHeight;
-        // Teraz ustawiamy docelową wysokość
         details.style.height = contentHeight + 'px';
         details.classList.add('expanded');
       } else {
         details.style.height = contentHeight + 'px';
-        // Wymuszamy przeliczenie układu (reflow)
         details.offsetHeight;
         details.style.height = '0';
         details.classList.remove('expanded');
@@ -135,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function changeText() {
     textElements.forEach(element => {
       element.style.animation = 'none';
-      element.offsetHeight; // Wymuszenie reflow
+      element.offsetHeight; 
       element.style.animation = null;
       element.textContent = texts[index];
     });
@@ -149,7 +141,6 @@ let lastScrollPosition = 0;
 const header = document.querySelector('.site-header');
 let ticking = false;
 
-// Ustaw początkową pozycję przewijania
 lastScrollPosition = window.pageYOffset;
 
 window.addEventListener('scroll', () => {
@@ -157,15 +148,12 @@ window.addEventListener('scroll', () => {
     window.requestAnimationFrame(() => {
       const currentScrollPosition = window.pageYOffset;
       
-      // Zawsze pokazuj header gdy jesteśmy na samej górze
       if (currentScrollPosition <= 0) {
         header.style.transform = 'translateY(0)';
       }
-      // Pokazuj header podczas scrollowania w górę
       else if (currentScrollPosition < lastScrollPosition) {
         header.style.transform = 'translateY(0)';
       }
-      // Ukrywaj header podczas scrollowania w dół
       else {
         header.style.transform = 'translateY(-100%)';
       }
@@ -178,7 +166,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Pokazuj header na początku
 header.style.transform = 'translateY(0)';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -197,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   window.addEventListener('scroll', checkFade);
-  checkFade(); // Sprawdź przy pierwszym załadowaniu
+  checkFade(); 
 });
 
 /* Galeria */
@@ -220,14 +207,12 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: '50px'
   });
 
-  // Obserwuj wszystkie elementy galerii
   document.querySelectorAll('.gallery-item').forEach((item) => {
     observer.observe(item);
   });
 });
 
 
-// Obsługa przycisku "Powrót do góry"
 window.onscroll = function() {
   scrollFunction();
 };
@@ -248,3 +233,41 @@ document.getElementById("backToTop").addEventListener("click", function() {
   });
 });
 
+window.addEventListener('load', () => {
+  const titleText = document.querySelector('.title-text');
+  titleText.classList.add('visible');
+});
+
+
+let currentIndex = 0;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    function openModal(element) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const captionText = document.getElementById("caption");
+      
+      modal.style.display = "flex"; 
+      modalImg.src = element.querySelector('img').src;
+      captionText.innerHTML = element.querySelector('img').alt;
+
+      currentIndex = Array.from(galleryItems).indexOf(element); 
+
+      const span = document.getElementsByClassName("close")[0];
+      span.onclick = function() { 
+        modal.style.display = "none"; 
+      }
+
+      // Funkcje do przesuwania zdjęć
+      document.getElementById('prevBtn').onclick = function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+        modalImg.src = galleryItems[currentIndex].querySelector('img').src;
+        captionText.innerHTML = galleryItems[currentIndex].querySelector('img').alt;
+      };
+
+      document.getElementById('nextBtn').onclick = function() {
+        currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+        modalImg.src = galleryItems[currentIndex].querySelector('img').src;
+        captionText.innerHTML = galleryItems[currentIndex].querySelector('img').alt;
+      };
+    }
