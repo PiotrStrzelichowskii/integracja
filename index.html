@@ -306,19 +306,26 @@
   
       <div class="galleries">
           <div class="gallery gallery1 active">
-              <div class="gallery-item wide"><img src="Ostatnie/img5.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item"><img src="Ostatnie/img7.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item tall"><img src="Ostatnie/img1.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item"><img src="Ostatnie/img2.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item"><img src="Ostatnie/img3.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item wide"><img src="Ostatnie/img10.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item"><img src="Ostatnie/img6.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item"><img src="Ostatnie/img11.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item tall"><img src="Ostatnie/img8.webp" alt="Event" loading="lazy"></div>
-              <div class="gallery-item wide"><img src="Ostatnie/img4.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item wide" onclick="openModal(this)"><img src="Ostatnie/img5.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item" onclick="openModal(this)"><img src="Ostatnie/img7.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item tall" onclick="openModal(this)"><img src="Ostatnie/img1.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item" onclick="openModal(this)"><img src="Ostatnie/img2.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item" onclick="openModal(this)"><img src="Ostatnie/img3.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item wide" onclick="openModal(this)"><img src="Ostatnie/img10.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item" onclick="openModal(this)"><img src="Ostatnie/img6.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item" onclick="openModal(this)"><img src="Ostatnie/img11.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item tall" onclick="openModal(this)"><img src="Ostatnie/img8.webp" alt="Event" loading="lazy"></div>
+              <div class="gallery-item wide" onclick="openModal(this)"><img src="Ostatnie/img4.webp" alt="Event" loading="lazy"></div>
           </div>
       </div>
 
+      </div>
+      <div id="imageModal" class="modal" style="display: none;">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <button id="prevBtn" class="nav-btn">❮</button>
+        <button id="nextBtn" class="nav-btn">❯</button>
       </div>
     </div>
   </main>
@@ -383,7 +390,6 @@
     </div>
   </footer>
 
-  <!-- Przeniesienie skryptu na koniec body z defer -->
   <script src="script.js" defer></script>
 </body>
 </html>
